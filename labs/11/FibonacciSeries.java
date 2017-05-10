@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class FibonacciSeries {
+
+    private static int count = 0;
+    /** Main method */
+    public static void main(String args[]) {
+        // Create a Scanner object
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter an index for the Fibonacci number: ");
+        int index = input.nextInt();
+
+        // Find and display the Fibonacci number
+        System.out.println("Fibonacci number at index " + index + " is " + fib(index));
+
+        // Display the method call count
+        System.out.println("Call count = " + count);
+    }
+
+    
+    /** The method for finding the Fibonacci number */
+    private static long fib(long index) {
+        count++;
+        if (index == 0) // Base case
+            return 0;
+        else if (index == 1) // Base case
+            return 1;
+        else  // Reduction and recursive calls
+            return fib(index - 1) + fib(index - 2);
+    }
+}
